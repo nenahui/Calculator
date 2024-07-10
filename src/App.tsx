@@ -1,15 +1,16 @@
-import { FloatButton } from 'antd';
-import { CustomerServiceOutlined } from '@ant-design/icons';
+import { ButtonItem } from './components/ButtonItem/ButtonItem';
+import { Flex } from 'antd';
+import { NUMBERS } from './constants';
 
 export const App = () => {
   return (
-    <>
-      <FloatButton
-        shape='square'
-        type='primary'
-        style={{ right: 24 }}
-        icon={<CustomerServiceOutlined />}
-      />
-    </>
+    <div className={'container'}>
+      ˙
+      <Flex wrap={'wrap-reverse'} gap={10}>
+        {NUMBERS.map((num) => (
+          <ButtonItem>{num}</ButtonItem>
+        ))}
+      </Flex>
+    </div>
   );
 };
