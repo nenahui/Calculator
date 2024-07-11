@@ -37,7 +37,7 @@ export const Calculator = () => {
                 {num}
               </ButtonItem>
             ))}
-            <ButtonItem onClick={() => dispatch(reset())}>RESET</ButtonItem>
+            <ButtonItem onClick={() => dispatch(reset())}>AC</ButtonItem>
             <ButtonItem onClick={() => dispatch(decrease())}> ⌫</ButtonItem>
           </Flex>
           <Flex gap={10} justify={'space-between'} vertical>

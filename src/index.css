@@ -7,22 +7,23 @@ body, html {
 }
 
 .container {
-    max-width: 440px;
+    max-width: 350px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0 10px;
+    border: 1px solid red;
 }
 
 .btn {
-    width: 95px;
-    height: 95px;
+    width: 75px;
+    height: 75px;
     font-size: 26px;
     position: relative;
 }
 
 @media screen and (max-width: 400px) {
     .btn {
-        width: 79px;
-        height: 79px;
+        /*width: 79px;*/
+        /*height: 79px;*/
     }
 }
 
