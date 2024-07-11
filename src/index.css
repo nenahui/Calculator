@@ -3,28 +3,19 @@
 }
 
 body, html {
-    margin: 0;
+    margin: 15% 0 0;
+    background-color: #1f1f1f;
 }
 
 .container {
     max-width: 350px;
     margin: 0 auto;
     padding: 0 10px;
-    border: 1px solid red;
 }
 
 .btn {
-    width: 75px;
-    height: 75px;
     font-size: 26px;
     position: relative;
-}
-
-@media screen and (max-width: 400px) {
-    .btn {
-        /*width: 79px;*/
-        /*height: 79px;*/
-    }
 }
 
 .btn-with-icon {

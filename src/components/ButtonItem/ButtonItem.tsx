@@ -3,17 +3,28 @@ import { Button } from 'antd';
 
 interface Props extends React.PropsWithChildren {
   onClick: VoidFunction;
-  iconUrl?: string;
+  width?: number;
+  height?: number;
+  colorHex?: string;
 }
 
-export const ButtonItem: React.FC<Props> = ({ onClick, iconUrl, children }) => {
+export const ButtonItem: React.FC<Props> = ({
+  onClick,
+  width = 75,
+  height = 75,
+  colorHex = '#0050b3',
+  children,
+}) => {
   return (
-    <Button onClick={onClick} size={'large'} className={'btn'} type={'primary'}>
-      {iconUrl ? (
-        <img className={'btn-with-icon'} src={iconUrl} alt={iconUrl} />
-      ) : (
-        children
-      )}
+    <Button
+      onClick={onClick}
+      size={'large'}
+      className={'btn'}
+      shape={'round'}
+      type={'primary'}
+      style={{ width: width, height: height, backgroundColor: colorHex }}
+    >
+      {children === '*' ? '×' : children === '/' ? '÷' : children}
     </Button>
   );
 };
