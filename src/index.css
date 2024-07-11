@@ -14,8 +14,9 @@ body, html {
 
 .btn {
     width: 95px;
-    height: 92px;
+    height: 95px;
     font-size: 26px;
+    position: relative;
 }
 
 @media screen and (max-width: 400px) {
@@ -23,4 +24,13 @@ body, html {
         width: 79px;
         height: 79px;
     }
+}
+
+.btn-with-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
 }
