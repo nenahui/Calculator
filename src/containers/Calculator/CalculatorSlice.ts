@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface CalculatorState {
   value: string;
-  total: number | string;
+  total: number;
 }
 
 const initialState: CalculatorState = {
@@ -15,7 +15,17 @@ export const CalculatorSlice = createSlice({
   initialState,
   reducers: {
     increaseBy: (state, action: PayloadAction<string>) => {
-      state.value += action.payload;
+      const lastChar = state.value.slice(-1);
+      const newChar = action.payload;
+
+      if (
+        ['+', '-', '*', '/'].includes(lastChar) &&
+        ['+', '-', '*', '/'].includes(newChar)
+      ) {
+        return;
+      }
+
+      state.value += newChar;
     },
     reset: (state) => {
       state.value = '';
@@ -28,7 +38,7 @@ export const CalculatorSlice = createSlice({
       try {
         state.total = eval(state.value);
       } catch (e) {
-        state.total = 'Incorrect';
+        state.total = 0;
       }
     },
   },
